@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+$deep-dark: #202123;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  color: $deep-dark;
+}
+body {
+  background-color: #D7D7D7;
+}
+body.scroll-lock {
+  overflow-y: hidden;
+}
+.container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: unset;
+}
+input[type=checkbox] {
+  border: 1px solid #B9B9B9;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: #fff;
+  &:checked {
+    background: url("/img/checkbox-bg.svg");
+    border: unset;
+  }
+}
+
+html {
+  font-size: 16px;
+}
+.results {
+  display: flex;
+  padding: 1rem;
+}
+.filter-wrapper {
+  margin-right: 20px;
+}
+.sticky-block {
+  position: sticky;
+  top: 12px;
+}
+.filter {
+  width: 240px;
+  background: #F5F5F5;
+  border-radius: 4px;
+  padding-top: 12px;
+  margin-bottom: 12px;
+}
+.filter__body--scroll {
+  height: 265px;
+  overflow-y: scroll;
+}
+.filter__title {
+  font-size: 0.85rem;
+  margin-bottom: 12px;
+  padding-left: 12px;
+}
+.filter__input-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  cursor: pointer;
+  transition: .1s;
+  &:hover {
+    background-color: #ebebeb;
+    transition: .5s;
+  }
+}
+.filter__checkbox {
+  margin-right: 12px;
+  cursor: pointer;
+}
+.filter__label {
+  font-size: 0.75rem;
+  flex-grow: 3;
+  cursor: pointer;
+}
+.btn--bottom-dashed {
+  color: #7284E4;
+  font-size: 0.75rem;
+  border-bottom: 1px dashed #7284E4;
+  width: fit-content;
+  &:hover {
+    border-bottom: unset;
+  }
+}
+.results__content {
+  flex-grow: 1;
+}
+.tickets {
+  width: 100%;
+}
+.ticket {
+  width: 100%;
+  background: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  min-height: 170px;
+  display: flex;
+}
+.ticket-wrapper {
+  margin-bottom: 12px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.ticket__main {
+  width: 100%;
+  padding: 40px 40px 18px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ticket__end {
+  max-width: 240px;
+  width: 100%;
+  background: #F5F5F5;
+  border-radius: 0 4px 4px 0;
+  padding: 12px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ticket__end__row {
+  margin-bottom: 12px;
+  width: 100%;
+  text-align: center;
+}
+.ticket__main__top-row {
+  display: flex;
+}
+.ticket__main__bottom-row {
+  display: flex;
+  align-items: flex-end;
+}
+.ticket__carrier {
+  display: flex;
+  align-items: center;
+  margin-right: 24px;
+}
+.ticket__carrier__image {
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+}
+.ticket__carrier__name {
+  font-weight: 600;
+  font-size: 0.85rem;
+  width: 100px;
+}
+.ticker__price {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+}
+.btn--primary {
+  background-color: #55BB06;
+  border-radius: 4px;
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.15rem;
+  padding: 8px 12px;
+  width: 100%;
+  &:hover {
+    background-color: #40a61b;
+  }
+}
+.ticket__desc {
+  color: #707276;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.ticket__baggage-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ticket__baggage-info__text {
+  font-size: 0.75rem;
+}
+.btn--plus {
+  font-size: 0.75rem;
+  background: #EAF0FA;
+  border-radius: 2px;
+  padding: 3px 8px;
+  color: #5763B3;
+  font-weight: 600;
+}
+.ticket__dashed-buttons {
+  display: flex;
+  margin-right: 46px;
+}
+.ticket__dashed-buttons__item {
+  margin-right: 24px;
+  &:last-child {
+    margin-right: 0;
+  }
+}
+.ticket__irrevocable {
+  display: flex;
+  align-items: center;
+}
+.ticket__irrevocable__icon {
+  margin-right: 8px;
+}
+.ticket__irrevocable__text {
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  color: #707276;
+}
+.ticket__info {
+  display: flex;
+}
+.ticket__date {
+  text-align: center;
+}
+.ticket__date__day {
+  font-size: 0.75rem;
+}
+.ticket__date__difference {
+  color: rgba(255, 55, 36, 0.8);
+  font-weight: 600;
+  font-size: 0.65rem;
+}
+.ticket__date__time {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.ticket__flight {
+  margin: 0 32px;
+}
+.ticket__flight__distance {
+  width: 168px;
+  max-width: 100%;
+}
+.ticket__flight__distance__text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ticket__flight__point {
+  color: #B9B9B9;
+  font-size: 0.65rem;
+}
+.ticket__flight__time {
+  font-size: 0.75rem;
+}
+.ticket__flight__transfer {
+  font-size: 0.75rem;
+  text-align: center;
+  color: #FF9900;
+}
+.ticket__flight__range {
+  width: 100%;
+  height: 1px;
+  background-color: #B9B9B9;
+  margin: 2px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ticket__flight__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #B9B9B9;
+}
+.btn--mobile-filter {
+  display: none;
+  width: 120px;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  margin-left: -60px;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 12px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+.btn--mobile-filter-close {
+  display: none;
+  width: 120px;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  margin-left: -60px;
+  background-color: rgba(85, 187, 6, 0.9);
+  padding: 12px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 600;
+}
+.ticket__main-btn {
+  .mobile-value {
+    display: none;
+    color: #fff;
+  }
+  .desktop-value {
+    color: #fff;
+  }
+}
+@media (max-width: 1080px) {
+  .ticket__flight {
+    margin: 0 18px;
+  }
+  .ticket__main__top-row {
+    flex-direction: column;
+  }
+  .ticket__carrier {
+    margin-bottom: 12px;
+  }
+  .ticket__main {
+    padding: 1rem;
+    justify-content: space-around;
+  }
+  .filter {
+    width: 100%;
+  }
+  .ticket__baggage-info {
+    flex-direction: column;
+  }
+  .ticket__baggage-info__text {
+    margin-bottom: 8px;
+  }
+  .ticket__end {
+    padding: 6px;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  .results {
+    padding-bottom: 80px;
+  }
+  .filter-wrapper {
+    width: 0;
+    height: 0;
+    opacity: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+  .filter {
+    margin-bottom: 0;
+  }
+  .filter__input-row {
+    padding: 8px 12px;
+  }
+  .filter-wrapper.active {
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #F5F5F5;
+    z-index: 10;
+    padding-top: 12px ;
+  }
+  .filter__body--scroll {
+    height: unset;
+    overflow: unset;
+  }
+  .sticky-block {
+    position: unset;
+    top: unset;
+  }
+  .btn--mobile-filter, .btn--mobile-filter-close {
+    display: block;
+  }
+  .ticket {
+    flex-direction: column;
+  }
+  .ticket__end {
+    max-width: 100%;
+    flex-direction: row-reverse;
+  }
+  .ticket__end__row--mobile-hidden {
+    display: none;
+  }
+  .ticket__main-btn {
+    .mobile-value {
+      display: block;
+    }
+    .desktop-value {
+      display: none;
+    }
+  }
+  .ticket__flight__distance {
+    width: 120px;
+  }
+  .ticket__flight__range {
+    width: 120px;
+  }
+}
+
+@media (max-width: 475px) {
+  html {
+    font-size: 12px;
+  }
+}
